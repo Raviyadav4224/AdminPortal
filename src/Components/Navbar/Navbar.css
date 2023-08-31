@@ -1,0 +1,6 @@
+.navbar {
+  height: 16vh;
+  width: 100vw;
+  background-color: greenyellow;
+  position: fixed;
+}
