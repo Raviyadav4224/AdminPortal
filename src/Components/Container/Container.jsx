@@ -1,7 +1,12 @@
 import React from "react";
-import './Container.css'
+import "./Container.css";
+import { Outlet } from "react-router-dom";
 const Container = () => {
-  return <div className="container">Container</div>;
+  return (
+    <>
+      <Outlet/>
+    </>
+  )
 };
 
 export default Container;

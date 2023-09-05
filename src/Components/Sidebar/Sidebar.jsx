@@ -1,36 +1,30 @@
 import React from "react";
 import "./Sidebar.css";
+import { Link } from "react-router-dom";
+import sidebarRoutesData from "../../Assets/sidebarRoutesData";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import sidebarSubRoutesData from "../../Assets/sidebarSubRoutesData";
 const Sidebar = () => {
   return (
     <div className="sidebar">
       Sidebar
-      {[
-        "fasfas",
-        "dasdas",
-        "w4rfewdf",
-        "q2rad",
-        "fasfas",
-        "dasdas",
-        "w4rfewdf",
-        "q2rad",
-        "fasfas",
-        "dasdas",
-        "w4rfewdf",
-        "q2rad",
-         "fasfas",
-        "dasdas",
-        "w4rfewdf",
-        "q2rad",
-        "fasfas",
-        "dasdas",
-        "w4rfewdf",
-        "q2rad",
-        "fasfas",
-        "dasdas",
-        "w4rfewdf",
-        "q2rad",
-      ].map((item,index) => (
-        <div style={{padding:'1.2rem'}} key={`${item}_${index}`}>{item}</div>
+      {sidebarRoutesData.map((item, index) => (
+        <>
+          <Link to={item.path} key={index} >
+            {item.pageName} {item.subRoutes ? <RiArrowDropDownLine /> : null}
+          </Link>
+          {item.subRoutes
+            ? sidebarSubRoutesData
+                .filter((val) => val.parentPageName === item.pageName)
+                .map((val, index) => {
+                  return (
+                    <Link to={val.path} key={index}>
+                     {val.pageName}
+                    </Link>
+                  );
+                })
+            : null}
+        </>
       ))}
     </div>
   );

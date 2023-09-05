@@ -1,3 +1,7 @@
 .sidebar {
   background-color: gold;
+  >a{
+    display: block;
+    padding: 1.2rem;
+  }
 }
