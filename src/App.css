@@ -23,7 +23,6 @@
     position: fixed;
     top: 16vh;
     left: 0;
-    overflow-y: auto;
   }
   .container {
     margin-top: 16vh;
